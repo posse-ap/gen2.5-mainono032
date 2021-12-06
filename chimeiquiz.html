@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ガチで東京の人しか解けない！ #東京の難読地名クイズ</title>
+  <link rel="stylesheet" href="./chimeiquiz.css">
+  <link rel="stylesheet" href="reset.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">1. この地名はなんて読む？</h1>
+    <img src="takanawa.png" alt="">
+    <ul>
+      <li id="wrongChoice" class="option" onclick="wrongChange()">たかわ</li>
+      <li id="correctChoice" class="option" onclick="correctChange()">たかなわ</li>
+      <li class="option">こうわ</li>
+    </ul>
+
+    <div>
+      <h1 id="correctBox" class="correct_box">正解<br>正解はたかなわです</h1>
+
+    </div>
+
+    <div>
+      <h1 id="wrongBox" class="wrong_box">不正解<br>正解はたかなわです</h1>
+    </div>
+
+  </div>
+  <div class="container">
+    <h1 class="title">2. この地名はなんて読む？</h1>
+  </div>
+  <script src="chimeiquiz.js"></script>
+</body>
+
+</html>
