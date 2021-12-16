@@ -57,7 +57,34 @@ ul{
 
 .correct_box{
   display: none;
+  background: #f5f5f5;
+    padding: 17px;
+    border-radius: 3px;
 }
 .wrong_box{
   display: none;
+  background: #f5f5f5;
+    padding: 17px;
+    border-radius: 3px;
+}
+
+.congrats::after{
+  background-color: blue;
+  width: 50px;
+  height: 3px;
+  display: block;
+  content: "";
+  position: relative;
+  top: 1px;
+  left: 0;
+}
+.booo::after{
+  background-color: red;
+  width: 50px;
+  height: 3px;
+  display: block;
+  content: "";
+  position: relative;
+  top: 1px;
+  left: 0;
 }
