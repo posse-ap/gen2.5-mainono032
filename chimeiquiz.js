@@ -20,7 +20,6 @@ let images = [
   "https://d1khcm40x1j0f.cloudfront.net/quiz/ad4f8badd896f1a9b527c530ebf8ac7f.png",
   "https://d1khcm40x1j0f.cloudfront.net/quiz/ee645c9f43be1ab3992d121ee9e780fb.png",
   "https://d1khcm40x1j0f.cloudfront.net/quiz/6a235aaa10f0bd3ca57871f76907797b.png",
-  "https://d1khcm40x1j0f.cloudfront.net/quiz/6a235aaa10f0bd3ca57871f76907797b.png",
   "https://d1khcm40x1j0f.cloudfront.net/quiz/0b6789cf496fb75191edf1e3a6e05039.png",
   "https://d1khcm40x1j0f.cloudfront.net/quiz/23e698eec548ff20a4f7969ca8823c53.png",
   "https://d1khcm40x1j0f.cloudfront.net/quiz/50a753d151d35f8602d2c3e2790ea6e4.png",
@@ -30,24 +29,38 @@ let images = [
 ]
 
 for (let i = 0; i < 10; i++) {
+  const li = [
+    `<li id="correctChoice_${i}" class="option" onclick="correctChange(${i})">${optionTextArray[i][0]}</li>`,
+      `<li id="wrongChoice1_${i}" class="option" onclick="wrongChange(${i})">${optionTextArray[i][1]}</li>`,
+      `<li id="wrongChoice2_${i}" class="option"onclick="wrongChange2(${i})">${optionTextArray[i][2]}</li>`
+  ]
+
+  // liの位置をランダムにする
+  for(let j=li.length-1 ; j>0; j--){
+    let r = Math.floor(Math.random()*(j+1))
+    let tmp = li[j]
+    li[j] = li[r]
+    li[r] = tmp
+  }
+
   let content = `<div class="container">
     <h1 class="title">${i + 1}. この地名はなんて読む？</h1>
     <img src="${images[i]}">
     <ul>
-      <li id="correctChoice_${i}" class="option" onclick="correctChange(${i})">${optionTextArray[i][0]}</li>
-      <li id="wrongChoice1_${i}" class="option" onclick="wrongChange(${i})">${optionTextArray[i][1]}</li>
-      <li id="wrongChoice2_${i}" class="option"onclick="wrongChange2(${i})">${optionTextArray[i][2]}</li>
+    ${li[0]}
+    ${li[1]}
+    ${li[2]}
     </ul>
 
     <div id="correctBox_${i}" class="correct_box">
-      <p class="congrats">正解</p>
-      <p>正解は${optionTextArray[i][0]}です</p>
+      <p class="congrats">正解！</p>
+      <p>正解は「${optionTextArray[i][0]}」です！</p>
 
     </div>
 
     <div id="wrongBox_${i}" class="wrong_box">
-      <p class="booo">不正解</p>
-      <p>正解は${optionTextArray[i][0]}です</p>
+      <p class="booo">不正解!</p>
+      <p>正解は「${optionTextArray[i][0]}」です！</p>
     </div>
 
   </div>`
