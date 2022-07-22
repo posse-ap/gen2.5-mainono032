@@ -28,7 +28,7 @@ let images = [
 
 ]
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < optionTextArray.length; i++) {
   const li = [
     `<li id="correctChoice_${i}" class="option" onclick="correctChange(${i})">${optionTextArray[i][0]}</li>`,
       `<li id="wrongChoice1_${i}" class="option" onclick="wrongChange(${i})">${optionTextArray[i][1]}</li>`,

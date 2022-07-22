@@ -19,6 +19,7 @@ ul{
   cursor: pointer; 
   box-shadow: 0 3px 2px -2px rgb(0 0 0 / 13%);
   background-color: #2C7CFE;
+  color: white;
 }
 .option_wrong_after{
   display: block;
@@ -29,6 +30,7 @@ ul{
   cursor: pointer; 
   box-shadow: 0 3px 2px -2px rgb(0 0 0 / 13%);
   background-color: #FD5029;
+  color: white;
 }
 
 .cantClick{
